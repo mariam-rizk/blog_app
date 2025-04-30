@@ -95,5 +95,24 @@ function validateLogin($email, $password){
 
     return $errors;
 }
+
+
+function validateAddBlog($title, $content, $image){
+    $errors = [];
+
+    $fields = [
+        'Title' => $title,
+        'Content' => $content,
+        'Image' => $image
+    ];
+
+    foreach ($fields as $field => $value) {
+        if ($error = requirements($field , $value)) {
+            $errors[] = $error;
+        }
+    }
+    return $errors;
+
+}
 ?>
 

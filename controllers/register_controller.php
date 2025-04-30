@@ -22,8 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $register = register($name, $email, $password);
-    if ($register == true) {
-        $_SESSION['user_name'] = $name;
+    if ($register) {
         setMessage('success', "Registered Successfully");
         header('location: index.php');
         exit();

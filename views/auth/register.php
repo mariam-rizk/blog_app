@@ -27,7 +27,7 @@
                     <button type="submit" class="btn btn-primary" >Sign Up</button>
                 </div>
             </form>
-            <p class="text-center mt-3">Already have an account? <a href="">Login here</a>
+            <p class="text-center mt-3">Already have an account? <a href="index.php?page=login">Login here</a>
             </p>
         </div>
     </div>

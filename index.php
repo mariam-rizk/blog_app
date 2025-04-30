@@ -35,8 +35,40 @@ switch($page){
     case 'logout' :
         include 'controllers/logout_controller.php';
         break;
+
+    case 'blogs' :
+        include 'views/blogs/index.php';
+        break;
+
+    case 'create' :
+        include 'views/blogs/create.php';
+        break;
+
+    case 'add_blog' :
+        include 'controllers/blogs/blog_controller.php';
+        break;
+
+    case 'delete_blog' :
+        include 'controllers/blogs/blog_controller.php';
+        break;
+
+    case 'edit_blog' :
+        include 'views/blogs/edit.php';
+        break;
+
+    case 'update_blog' :
+        include 'controllers/blogs/blog_controller.php';
+        break;
+    
+    case 'view_blog' :
+        include 'views/blogs/view_blog.php';
+        break;
+        
+
     default : 
         header('location:views/not_found.php');
+
+
 }
 
 include_once 'views/layouts/footer.php';
