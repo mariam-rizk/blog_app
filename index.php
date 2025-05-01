@@ -8,9 +8,21 @@ require_once 'views/layouts/header.php';
 
 getMessages();
 
- 
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+
+$allowed_pages = ['home', 'login', 'register', 'login_controller', 'register_controller'];
+if (!isset($_SESSION['user'])) {
+    if (!in_array($page, $allowed_pages)) {
+        setMessage('danger', 'You must login first.');
+        header('Location: index.php?page=login');
+        exit;
+    }
+}
+
+
+
 switch($page){
     case 'home' : 
         include 'views/home.php';
